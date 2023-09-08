@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TSF Banking</string>
+    <string name="tsf_banking_app">TSF: Banking App</string>
+    <string name="description">This is a simple bank system management app that allows you to \n\t\t 1- show all customers \n\t\t 2- select a one \n\t\t 3- transfer money from a customer to \n\t\t\t\t\t another</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

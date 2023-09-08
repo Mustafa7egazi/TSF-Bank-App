@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.tsfbanking.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_customersFragment"
+            app:destination="@id/customersFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/customersFragment"
+        android:name="com.example.tsfbanking.ui.customers.CustomersFragment"
+        android:label="All Customers"
+        tools:layout="@layout/fragment_customers" >
+        <action
+            android:id="@+id/action_customersFragment_to_customerViewerFragment"
+            app:destination="@id/customerViewerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerViewerFragment"
+        android:name="com.example.tsfbanking.ui.viewer.CustomerViewerFragment"
+        android:label="fragment_customer_viewer"
+        tools:layout="@layout/fragment_customer_viewer" >
+        <argument
+            android:name="allCustomerList"
+            app:argType="com.example.tsfbanking.pojo.Account[]" />
+        <argument
+            android:name="ownerId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="ownerName"
+            app:argType="string"
+            android:defaultValue="name" />
+        <argument
+            android:name="ownerMail"
+            app:argType="string"
+            android:defaultValue="mail" />
+        <argument
+            android:name="ownerBalance"
+            app:argType="string"
+            android:defaultValue="0.0$" />
+        <action
+            android:id="@+id/action_customerViewerFragment_to_customersFragment"
+            app:destination="@id/customersFragment"
+            app:popUpTo="@id/customersFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
